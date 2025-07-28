@@ -1,0 +1,91 @@
+.start-session-page h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.start-session-page > p {
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.session-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.students-list, .session-actions {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.students-list h3, .session-actions h3 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.students-list ul {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.students-list li {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+.students-list li:last-child {
+  border-bottom: none;
+}
+
+.action-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  box-sizing: border-box;
+  text-align: center;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.create-link-btn {
+  background-color: #007bff;
+}
+
+.share-btn {
+  background-color: #28a745;
+}
+
+.share-btn:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.success-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #e9f7ef;
+  color: #28a745;
+  border: 1px solid #a3e9a4;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+  .session-container {
+    grid-template-columns: 1fr;
+  }
+}

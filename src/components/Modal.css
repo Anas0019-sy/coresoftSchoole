@@ -1,0 +1,62 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  
+  /* --- التعديلات هنا --- */
+  align-items: flex-start; /* 1. تبدأ النافذة من الأعلى وليس المنتصف */
+  padding: 5vh 1rem;      /* 2. إضافة مسافة من الأعلى والأسفل لسهولة الرؤية */
+  overflow-y: auto;       /* 3. السماح بتمرير النافذة نفسها إذا كانت الشاشة قصيرة جدًا */
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 600px; /* زيادة العرض قليلاً ليناسب النموذج الطويل */
+  animation: scaleUp 0.3s ease-out;
+
+  /* --- التعديلات هنا --- */
+  max-height: 90vh; /* 4. تحديد أقصى ارتفاع للنافذة */
+  overflow-y: auto;   /* 5. إضافة شريط تمرير داخلي تلقائي عند الحاجة */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #6c757d;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

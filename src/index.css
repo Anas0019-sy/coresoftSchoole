@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Cairo', system-ui, sans-serif;
+  background-color: #ffffff;
+  color: #213547;
+}
+
+h1, h2, h3, h4, h5, h6, button, p, a, div {
+  font-family: 'Cairo', system-ui, sans-serif;
+}
+
+.animation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out;
+}
+.animation-overlay.active {
+  opacity: 1;
+}
+
+.book-animation-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  text-align: center;
+}
+.book-animation-container.active {
+  opacity: 1;
+}
+.book-image {
+  width: 200px;
+  height: auto;
+}
+
+.book-animation-title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 1rem;
+  opacity: 0;
+}
+
+@keyframes book-fall {
+  from {
+    transform: translateY(-100vh) scale(0.5);
+  }
+  to {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes title-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.book-animation-container.falling .book-image {
+  animation: book-fall 1.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+.book-animation-container.falling .book-animation-title {
+  animation: title-fade-in 1s ease-in 0.5s forwards;
+}
+
+.particles-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  opacity: 0;
+}
+.book-animation-container.falling .particles-container {
+  animation: title-fade-in 1s ease-in 0.5s forwards;
+}
+
+.particle-star {
+  position: absolute;
+  background-color: #FFD700;
+  border-radius: 50%;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.particle-star:nth-child(1) { top: 10%; left: 20%; width: 5px; height: 5px; animation-delay: 0.1s; }
+.particle-star:nth-child(2) { top: 20%; left: 80%; width: 8px; height: 8px; animation-delay: 0.3s; }
+.particle-star:nth-child(3) { top: 80%; left: 10%; width: 6px; height: 6px; animation-delay: 0.5s; }
+.particle-star:nth-child(4) { top: 75%; left: 70%; width: 5px; height: 5px; animation-delay: 0.2s; }
+.particle-star:nth-child(5) { top: 40%; left: 5%; width: 7px; height: 7px; animation-delay: 0.6s; }
+.particle-star:nth-child(6) { top: 5%; left: 50%; width: 6px; height: 6px; animation-delay: 0.4s; }
+.particle-star:nth-child(7) { top: 90%; left: 40%; width: 8px; height: 8px; animation-delay: 0.1s; }
+.particle-star:nth-child(8) { top: 30%; left: 90%; width: 5px; height: 5px; animation-delay: 0.7s; }
+.particle-star:nth-child(9) { top: 60%; left: 25%; width: 6px; height: 6px; animation-delay: 0.3s; }
+.particle-star:nth-child(10) { top: 85%; left: 85%; width: 7px; height: 7px; animation-delay: 0.5s; }
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+.flying-rocket {
+  position: fixed;
+  font-size: 1.5rem;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
+}
+.flying-rocket.visible {
+  opacity: 1;
+}
+@keyframes fly-to-center {
+  from {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg) scale(2);
+    top: 50vh;
+    left: 50vw;
+  }
+}
+@keyframes fly-away {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg) scale(2);
+    top: 50vh;
+    left: 50vw;
+    opacity: 1;
+  }
+  to {
+    transform: translate(200%, -200%) rotate(405deg) scale(0.5);
+    top: 0;
+    left: 100vw;
+    opacity: 0;
+  }
+}
+.flying-rocket.phase-one {
+  animation: fly-to-center 0.8s ease-in-out forwards;
+}
+.flying-rocket.phase-two {
+  animation: fly-away 0.6s ease-in forwards;
+}
+
+/* --- أنماط أنيميشن الاحتفال --- */
+.celebration-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.celebration-container.active {
+  opacity: 1;
+}
+
+.celebration-hat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 5rem;
+  animation: hat-pop 4s forwards;
+}
+
+.celebration-text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px black;
+  animation: text-fade-in-out 4s forwards;
+}
+
+.celebration-container .particle-star {
+  --x-end: calc( (var(--i) - 15) * 15vw ); /* Spread horizontally */
+  --y-end: calc( (var(--i) * -5vh) + (rand() * 20vh - 10vh) ); /* Go up and spread vertically */
+  position: absolute;
+  background-color: gold;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  animation: confetti-blast 4s forwards;
+  /* A simplified animation is used as rand() is not standard CSS */
+}
+
+@keyframes hat-pop {
+  0% { transform: translate(-50%, -50%) scale(0); }
+  10% { transform: translate(-50%, -50%) scale(1.2); }
+  20% { transform: translate(-50%, -50%) scale(1); }
+  80% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+@keyframes text-fade-in-out {
+  0%, 100% { opacity: 0; }
+  20%, 80% { opacity: 1; }
+}
+
+/* Simplified confetti blast for broad compatibility */
+@keyframes confetti-blast {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(var(--randX) * 200px), calc(var(--randY) * -300px)) scale(0);
+        opacity: 0;
+    }
+}
+/* Note: For true random particle effects in CSS, you'd need to set variables for each particle,
+   which is better done with JS. This CSS provides a basic effect. */

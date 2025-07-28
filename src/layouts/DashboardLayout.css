@@ -1,0 +1,44 @@
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #495057;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+
+.sidebar-nav a {
+  color: #adb5bd;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-nav a:hover {
+  background-color: #495057;
+  color: white;
+}
+
+.dashboard-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #f4f7f6;
+}

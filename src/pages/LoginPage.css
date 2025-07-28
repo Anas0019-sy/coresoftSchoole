@@ -1,0 +1,101 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* تعديل: ليأخذ ارتفاع الشاشة الكامل */
+  background-color: #f8f9fa;
+  padding: 2rem;
+  box-sizing: border-box; /* للتأكد من أن padding لا يسبب مشاكل */
+}
+
+.login-container {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* تعديل: زيادة العرض الأقصى للحاوية */
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+.login-container p {
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+/* --- باقي الأنماط تبقى كما هي --- */
+.login-form .form-group {
+  text-align: right;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea { /* إضافة textarea هنا */
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-links {
+  margin-top: 1.5rem; /* تعديل: إضافة مسافة علوية */
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+.auth-links a {
+  color: #007bff;
+  text-decoration: none;
+}
+.auth-links a:hover {
+  text-decoration: underline;
+}
+.auth-links span {
+  margin: 0 0.5rem;
+  color: #dee2e6;
+}
+
+.dashboard-links {
+  border-top: 1px solid #dee2e6;
+  padding-top: 1.5rem;
+}
+
+.dashboard-btn {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  color: white;
+  box-sizing: border-box;
+}
+
+.dashboard-btn.student { background-color: #28a745; }
+.dashboard-btn.teacher { background-color: #17a2b8; }
+.dashboard-btn.admin { background-color: #dc3545; }

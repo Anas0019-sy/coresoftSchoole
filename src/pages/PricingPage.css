@@ -1,0 +1,13 @@
+.pricing-page {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: center;
+}

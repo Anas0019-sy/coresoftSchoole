@@ -1,0 +1,70 @@
+.pricing-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.pricing-card.featured {
+  border-color: #007bff;
+  transform: scale(1.05);
+}
+
+.pricing-header .plan-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-header .plan-price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #007bff;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-header .plan-price span {
+  font-size: 1rem;
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  text-align: right;
+}
+
+.plan-features li {
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+.plan-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pricing-card.featured .plan-button {
+  background-color: #28a745;
+}
+
+.plan-button:hover {
+  background-color: #0056b3;
+}
+
+.pricing-card.featured .plan-button:hover {
+  background-color: #218838;
+}

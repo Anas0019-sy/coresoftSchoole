@@ -1,0 +1,70 @@
+.contact-page .contact-header {
+  background-color: #f8f9fa;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.contact-page .contact-header h1 {
+  margin-top: 0;
+}
+
+.contact-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.contact-info h3, .contact-form h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  line-height: 1.8;
+  color: #333;
+}
+
+.map-container {
+  margin-top: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.contact-form {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+/* --- Social Icons Styles --- */
+.social-icons-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem; /* Add some space before the map */
+  flex-wrap: wrap; /* Ensure icons wrap on smaller screens */
+  justify-content: flex-start; /* Align to the start */
+}
+
+.social-icons-container a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  background-color: #e9ecef;
+  color: #343a40;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons-container a:hover {
+  background-color: #007bff; /* A primary color, change if you have one */
+  color: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
