@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState} from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 // Layouts
@@ -33,8 +33,7 @@ import SuccessAnimation from './components/SuccessAnimation'; // <-- تم است
 
 function App() {
   const navigate = useNavigate();
-  const bookAudioRef = useRef<HTMLAudioElement>(null);
-  const rocketAudioRef = useRef<HTMLAudioElement>(null);
+
 
   // State for existing animations
   const [bookState, setBookState] = useState({ active: false, phase: '', courseName: '' });
@@ -46,19 +45,13 @@ function App() {
   // --- دوال التحكم بالأنيميشن ---
   const triggerBookAnimation = (url: string, name: string) => {
     setBookState({ active: true, phase: 'falling', courseName: name });
-    if (bookAudioRef.current) {
-      bookAudioRef.current.currentTime = 0;
-      bookAudioRef.current.play().catch(e => console.error("Book audio failed:", e));
-    }
+  
     setTimeout(() => navigate(url), 2000);
     setTimeout(() => setBookState({ active: false, phase: '', courseName: '' }), 2500);
   };
 
   const triggerRocketAnimation = (startPosition: { top: number; left: number }) => {
-    if (rocketAudioRef.current) {
-      rocketAudioRef.current.currentTime = 0;
-      rocketAudioRef.current.play().catch(e => console.error("Rocket audio failed:", e));
-    }
+ 
     setRocketState({ top: startPosition.top, left: startPosition.left, visible: true, phase: 'phase-one' });
     setTimeout(() => setRocketState(prev => ({ ...prev, phase: 'phase-two' })), 800);
     setTimeout(() => navigate('/about'), 900);
@@ -80,8 +73,7 @@ function App() {
   return (
     <>
       {/* --- عناصر الأنيميشن --- */}
-      <audio ref={bookAudioRef} src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_b853589b35.mp3" preload="auto" />
-      <audio ref={rocketAudioRef} src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_e06b44816b.mp3" preload="auto" />
+ 
 
       {/* الأنيميشن الجديد للاحتفال */}
       <SuccessAnimation 
